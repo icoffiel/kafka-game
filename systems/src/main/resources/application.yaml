@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    password: systems
+    username: systems
+    url: jdbc:postgresql://localhost:5432/systems
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # Remove and replace with something like liquibase or flyway

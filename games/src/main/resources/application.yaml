@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    password: games
+    username: games
+    url: jdbc:postgresql://localhost:5432/games
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # Remove and replace with something like liquibase or flyway

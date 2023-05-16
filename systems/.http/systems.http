@@ -1,0 +1,17 @@
+### Get all systems
+GET localhost:8080/systems/
+
+### Add a system
+POST localhost:8080/systems/
+Content-Type: application/json
+
+{
+  "name": "Xbox",
+  "releaseDate": "2012-01-20"
+}
+
+### Retrieve a system
+GET localhost:8080/systems/2
+
+### Delete a system
+DELETE localhost:8080/systems/1

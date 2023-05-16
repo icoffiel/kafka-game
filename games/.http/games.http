@@ -1,0 +1,21 @@
+### Get all systems
+GET localhost:8080/games/
+
+### Add a system
+POST localhost:8080/games/
+Content-Type: application/json
+
+{
+  "name": "Crash Bandicoot",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+### Retrieve a system
+GET localhost:8080/games/1
+
+### Delete a system
+DELETE localhost:8080/games/1
