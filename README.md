@@ -7,7 +7,7 @@ Kafka Games is an application that allows Gaming Systems and Games to be added t
 ![Architecture](.docs/images/architecture.svg)
 
 The application uses The following microservices to add the expected entites to the system:
-- Systems: To manage Gaming Systems
+- Systems: To manage gaming systems
 - Games: To manage games
 
 Each of the microservices databases are then connected to Kafka via Kafka connect to produce messages whenever systems
@@ -32,7 +32,7 @@ Start up the applications:
 
 ## To Do
 
-- Games application
+- Updates
 - Validation on endpoints
 - Setup Kafka & Kafka Connect
 - Stream processing apps (dashboard for games and consoles?)
