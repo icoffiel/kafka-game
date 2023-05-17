@@ -1,8 +1,8 @@
 ### Get all systems
-GET localhost:8080/games/
+GET localhost:18081/games/
 
 ### Add a system
-POST localhost:8080/games/
+POST localhost:18081/games/
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### Retrieve a system
-GET localhost:8080/games/1
+GET localhost:18081/games/1
 
 ### Delete a system
-DELETE localhost:8080/games/1
+DELETE localhost:18081/games/1

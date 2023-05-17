@@ -1,3 +1,5 @@
+server:
+  port: 18081
 spring:
   datasource:
     password: games

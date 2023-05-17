@@ -29,12 +29,34 @@ docker-compose up -d
 ```
 
 Start up the applications:
+```shell
+# run from systems folder
+cd systems
+
+./gradlew bootRun
+```
+
+```shell
+# run from games folder
+cd games
+
+./gradlew bootRun
+```
+
+Add the connectors:
+```shell
+# run from the root folder
+./gradlew addConnectors
+```
+
+> Note: Kafka Connect can take a minute or two to start so if this fails try waiting a minute before running.
+> This also only needs to be ran once. If ran multiple times it will produce a 409 status code
 
 ## To Do
 
 - Updates
 - Validation on endpoints
-- Setup Kafka & Kafka Connect
 - Stream processing apps (dashboard for games and consoles?)
 - Tests
 - Hook everything into the root gradle file for easier startups (single command to start everything)
+- Ephemeral ports for apps and use a gateway for apps?

@@ -1,13 +1,15 @@
 package com.icoffiel.games.db;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class GameEntity {
 
     @Id
@@ -32,6 +34,15 @@ public class GameEntity {
 
     @Column(name = "release_date")
     private LocalDate releaseDate;
+
+    // Auditing data. Used by Kafka Connect
+    @Column(name = "created_date", nullable = false)
+    @CreationTimestamp
+    private Instant createdDate;
+
+    @Column(name = "modified_date", nullable = false)
+    @UpdateTimestamp
+    private Instant modifiedDate;
 
     public void setId(Long id) {
         this.id = id;
@@ -87,5 +98,21 @@ public class GameEntity {
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public Instant getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Instant createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Instant getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(Instant modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 }

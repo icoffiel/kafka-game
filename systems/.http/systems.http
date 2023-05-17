@@ -1,8 +1,8 @@
 ### Get all systems
-GET localhost:8080/systems/
+GET localhost:18080/systems/
 
 ### Add a system
-POST localhost:8080/systems/
+POST localhost:18080/systems/
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### Retrieve a system
-GET localhost:8080/systems/2
+GET localhost:18080/systems/2
 
 ### Delete a system
-DELETE localhost:8080/systems/1
+DELETE localhost:18080/systems/1
