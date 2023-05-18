@@ -60,8 +60,7 @@ Add the connectors:
 ## To Do
 
 - Updates
-- Validation on endpoints
-- Stream processing apps (dashboard for games and consoles?)
+- Stream processing apps (dashboard for games and consoles, notification system)
 - Tests
 - Hook everything into the root gradle file for easier startups (single command to start everything)
 - Ephemeral ports for apps and use a gateway for apps?
