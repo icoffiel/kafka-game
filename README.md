@@ -50,7 +50,12 @@ Add the connectors:
 ```
 
 > Note: Kafka Connect can take a minute or two to start so if this fails try waiting a minute before running.
-> This also only needs to be ran once. If ran multiple times it will produce a 409 status code
+> This also only needs to be run once. If ran multiple times it will produce a 409 status code
+
+## Issues
+- Topic naming
+  - Using dot notation (`systems.sql.<table>` for instance) doesn't play nice when being ingested as a sink to a DB due to the naming
+  - Would also be nice to instead of only having a prefix, to also have a postfix (`systems.<table>.sql` would then be possible for instance)
 
 ## To Do
 

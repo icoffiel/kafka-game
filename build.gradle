@@ -21,7 +21,7 @@ test {
 tasks.register('addConnectors') {
     description 'Adds the connectors to Kafka Connect'
     group 'kafka connect'
-    dependsOn 'addSystemsConnector', 'addGamesConnector'
+    dependsOn 'addSystemsConnector', 'addGamesConnector', 'addSystemsSink'
 }
 
 // TODO
@@ -55,7 +55,7 @@ tasks.register('addSystemsConnector') {
 
                         // Topic configuration
                         "tasks.max": "1",
-                        "topic.prefix": "systems.sql.",
+                        "topic.prefix": "systems_sql_",
 
                         // Setup the Key for the topics
                         "transforms": "createKey",
@@ -94,7 +94,7 @@ tasks.register('addGamesConnector') {
 
                         // Topic configuration
                         "tasks.max": "1",
-                        "topic.prefix": "games.sql.",
+                        "topic.prefix": "games_sql_", // ideally would be dot annotation but doesn't play well with table names
 
                         // Setup the Key for the topics
                         "transforms": "createKey",
@@ -109,6 +109,41 @@ tasks.register('addGamesConnector') {
     }
 }
 
+tasks.register('addSystemsSink') {
+    description 'Adds the Systems DB Sink to Kafka Connect'
+    group 'kafka connect'
+    doLast {
+        def body = [
+                name: "SystemsToGameSink",
+                config: [
+                        "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+                        "topics": "systems_sql_system_entity",
+
+                        "connection.password": "games",
+                        "connection.user": "games",
+                        "connection.url": "jdbc:postgresql://postgres:5432/games",
+                        "fields.whitelist": "id,name",
+                        "table.name.format": "kafka_\${topic}",
+
+                        "auto.evolve": "false",
+                        "auto.create": "false",
+                        "batch.size": "3000",
+                        "insert.mode": "upsert",
+                        "max.retries": "10",
+                        "pk.mode": "record_value",
+                        "pk.fields": "id",
+                        "retry.backoff.ms": "3000",
+                        "tasks.max": "1",
+                ]
+        ]
+        def req = connectorsRequest(body)
+
+        def resp = new JsonSlurper().parseText(req.getInputStream().getText())
+        logger.quiet "Response: ${resp}"
+    }
+}
+
+
 private static URLConnection connectorsRequest(LinkedHashMap<String, Serializable> body) {
     def req = new URL('http://localhost:8083/connectors/').openConnection()
     req.setRequestMethod("POST")
@@ -118,3 +153,25 @@ private static URLConnection connectorsRequest(LinkedHashMap<String, Serializabl
 
     return req
 }
+
+/*
+{
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "table.name.format": "kafka_${topic}",
+  "connection.password": "games",
+  "topics": "systems_sql_system_entity",
+  "tasks.max": "1",
+  "batch.size": "3000",
+  "max.retries": "10",
+  "retry.backoff.ms": "3000",
+  "fields.whitelist": "id,name",
+  "auto.evolve": "false",
+  "connection.user": "games",
+  "name": "SystemsToGameSink",
+  "auto.create": "false",
+  "connection.url": "jdbc:postgresql://postgres:5432/games",
+  "insert.mode": "upsert",
+  "pk.mode": "record_value",
+  "pk.fields": "id"
+}
+ */
