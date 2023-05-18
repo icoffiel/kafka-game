@@ -24,7 +24,7 @@ public class GameEntity {
     private String description;
 
     @Column(name = "number_of_players")
-    private int numberOfPlayers;
+    private Integer numberOfPlayers;
 
     @Column(name = "price")
     private Double price;

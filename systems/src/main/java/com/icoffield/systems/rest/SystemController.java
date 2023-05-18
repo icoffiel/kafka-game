@@ -1,6 +1,7 @@
 package com.icoffield.systems.rest;
 
 import com.icoffield.systems.business.SystemService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class SystemController {
     }
 
     @PostMapping("/")
-    public SystemResponse save(@RequestBody AddSystemRequest addSystemRequest) {
+    public SystemResponse save(@Valid @RequestBody AddSystemRequest addSystemRequest) {
         return systemService.save(addSystemRequest);
     }
 

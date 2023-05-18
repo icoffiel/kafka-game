@@ -1,6 +1,7 @@
 package com.icoffiel.games.rest;
 
 import com.icoffiel.games.business.GameService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class GameController {
     }
 
     @PostMapping("/")
-    public GameResponse createGame(@RequestBody AddGameRequest addGameRequest) {
+    public GameResponse createGame(@Valid @RequestBody AddGameRequest addGameRequest) {
         return gameService.createGame(addGameRequest);
     }
 

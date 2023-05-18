@@ -10,6 +10,14 @@ Content-Type: application/json
   "releaseDate": "2012-01-20"
 }
 
+### Try to add an invalid system (missing name)
+POST localhost:18080/systems/
+Content-Type: application/json
+
+{
+  "releaseDate": "2012-01-20"
+}
+
 ### Retrieve a system
 GET localhost:18080/systems/2
 

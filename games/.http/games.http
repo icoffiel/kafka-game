@@ -1,7 +1,7 @@
-### Get all systems
+### Get all games
 GET localhost:18081/games/
 
-### Add a system
+### Add a game
 POST localhost:18081/games/
 Content-Type: application/json
 
@@ -14,8 +14,18 @@ Content-Type: application/json
   "releaseDate": "2017-01-01"
 }
 
-### Retrieve a system
+### Add an invalid game (missing name)
+POST localhost:18081/games/
+Content-Type: application/json
+
+{
+  "description": "Lorem Ipsum about Crash",
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+### Retrieve a game
 GET localhost:18081/games/1
 
-### Delete a system
+### Delete a game
 DELETE localhost:18081/games/1
