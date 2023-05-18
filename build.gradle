@@ -35,35 +35,15 @@ tasks.register('addSystemsConnector') {
     description 'Adds the System DB Source Connector to Kafka Connect'
     group 'kafka connect'
     doLast {
-        def body = [
-                name: "SystemsSourceConnector",
-                config: [
-                        "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-
-                        // Connection Properties
-                        "connection.url": "jdbc:postgresql://postgres:5432/systems",
-                        "connection.user": "systems",
-                        "connection.password": "systems",
-
-                        // Table configuration
-                        "table.whitelist": "system_entity",
-
-                        // Mode configuration
-                        "mode": "timestamp+incrementing", // Allows for both inserts and updates
-                        "incrementing.column.name": "id",
-                        "timestamp.column.name": "modified_date",
-
-                        // Topic configuration
-                        "tasks.max": "1",
-                        "topic.prefix": "systems_sql_",
-
-                        // Setup the Key for the topics
-                        "transforms": "createKey",
-                        "transforms.createKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
-                        "transforms.createKey.fields": "id",
-                ]
-        ]
-        def req = connectorsRequest(body)
+        def req = connectorsRequest(
+            sourceRequestBody(
+                "SystemsSourceConnector",
+                "systems",
+                "systems",
+                "system_entity",
+                "systems_sql_",
+            )
+        )
 
         def resp = new JsonSlurper().parseText(req.getInputStream().getText())
         logger.quiet "Response: ${resp}"
@@ -74,35 +54,15 @@ tasks.register('addGamesConnector') {
     description 'Adds the Game DB Source Connector to Kafka Connect'
     group 'kafka connect'
     doLast {
-        def body = [
-                name: "GamesSourceConnector",
-                config: [
-                        "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-
-                        // Connection Properties
-                        "connection.url": "jdbc:postgresql://postgres:5432/games",
-                        "connection.user": "games",
-                        "connection.password": "games",
-
-                        // Table configuration
-                        "table.whitelist": "game_entity",
-
-                        // Mode configuration
-                        "mode": "timestamp+incrementing", // Allows for both inserts and updates
-                        "incrementing.column.name": "id",
-                        "timestamp.column.name": "modified_date",
-
-                        // Topic configuration
-                        "tasks.max": "1",
-                        "topic.prefix": "games_sql_", // ideally would be dot annotation but doesn't play well with table names
-
-                        // Setup the Key for the topics
-                        "transforms": "createKey",
-                        "transforms.createKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
-                        "transforms.createKey.fields": "id",
-                ]
-        ]
-        def req = connectorsRequest(body)
+        def req = connectorsRequest(
+            sourceRequestBody(
+                "GamesSourceConnector",
+                "games",
+                "games",
+                "game_entity",
+                "games_sql_",
+            )
+        )
 
         def resp = new JsonSlurper().parseText(req.getInputStream().getText())
         logger.quiet "Response: ${resp}"
@@ -143,6 +103,37 @@ tasks.register('addSystemsSink') {
     }
 }
 
+private static LinkedHashMap<String, Serializable> sourceRequestBody(String name, String user, String password, String table, String topicPrefix) {
+    return [
+            name  : name,
+            config: [
+                    "connector.class"            : "io.confluent.connect.jdbc.JdbcSourceConnector",
+
+                    // Connection Properties
+                    "connection.url"             : "jdbc:postgresql://postgres:5432/$user",
+                    "connection.user"            : user,
+                    "connection.password"        : password,
+
+                    // Table configuration
+                    "table.whitelist"            : table,
+
+                    // Mode configuration
+                    "mode"                       : "timestamp+incrementing", // Allows for both inserts and updates
+                    "incrementing.column.name"   : "id",
+                    "timestamp.column.name"      : "modified_date",
+
+                    // Topic configuration
+                    "tasks.max"                  : "1",
+                    "topic.prefix"               : topicPrefix,
+
+                    // Setup the Key for the topics
+                    "transforms"                 : "createKey",
+                    "transforms.createKey.type"  : "org.apache.kafka.connect.transforms.ValueToKey",
+                    "transforms.createKey.fields": "id",
+            ]
+    ]
+}
+
 
 private static URLConnection connectorsRequest(LinkedHashMap<String, Serializable> body) {
     def req = new URL('http://localhost:8083/connectors/').openConnection()
@@ -153,25 +144,3 @@ private static URLConnection connectorsRequest(LinkedHashMap<String, Serializabl
 
     return req
 }
-
-/*
-{
-  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
-  "table.name.format": "kafka_${topic}",
-  "connection.password": "games",
-  "topics": "systems_sql_system_entity",
-  "tasks.max": "1",
-  "batch.size": "3000",
-  "max.retries": "10",
-  "retry.backoff.ms": "3000",
-  "fields.whitelist": "id,name",
-  "auto.evolve": "false",
-  "connection.user": "games",
-  "name": "SystemsToGameSink",
-  "auto.create": "false",
-  "connection.url": "jdbc:postgresql://postgres:5432/games",
-  "insert.mode": "upsert",
-  "pk.mode": "record_value",
-  "pk.fields": "id"
-}
- */
