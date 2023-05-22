@@ -1,0 +1,9 @@
+### Add a new notification
+POST localhost:18082/notifications/
+Content-Type: application/json
+
+{
+  "email": "test2@example.com",
+  "id": 1,
+  "type": "SYSTEM"
+}
