@@ -6,11 +6,11 @@ POST localhost:18081/games/
 Content-Type: application/json
 
 {
-  "name": "Crash Bandicoot",
+  "name": "Crash Bandicoot 3",
   "description": "Lorem Ipsum about Crash",
   "numberOfPlayers": 1,
   "price": 10.99,
-  "systemId": 1,
+  "systemId": 2,
   "releaseDate": "2017-01-01"
 }
 

@@ -1,0 +1,83 @@
+{
+  "type": "record",
+  "name": "GameEntity",
+  "namespace": "com.icoffiel.avro.db",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "created_date",
+      "type": {
+        "type": "long",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "description",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "modified_date",
+      "type": {
+        "type": "long",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "number_of_players",
+      "type": [
+        "null",
+        "int"
+      ],
+      "default": null
+    },
+    {
+      "name": "price",
+      "type": [
+        "null",
+        "double"
+      ],
+      "default": null
+    },
+    {
+      "name": "release_date",
+      "type": [
+        "null",
+        {
+          "type": "int",
+          "connect.version": 1,
+          "connect.name": "org.apache.kafka.connect.data.Date",
+          "logicalType": "date"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "system_id",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    }
+  ],
+  "connect.name": "com.icoffiel.avro.db.GameEntity"
+}

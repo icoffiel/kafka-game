@@ -12,6 +12,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     CREATE DATABASE games;
     CREATE USER games WITH PASSWORD 'games';
     GRANT ALL PRIVILEGES ON DATABASE games TO games;
+
+    CREATE DATABASE notifications;
+    CREATE USER notifications WITH PASSWORD 'notifications';
+    GRANT ALL PRIVILEGES ON DATABASE notifications TO notifications;
 EOSQL
 
 # Connect to the systems database and grant privileges on the public schema
@@ -19,7 +23,12 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "systems" <<-EOSQL
     GRANT ALL PRIVILEGES ON SCHEMA public TO systems;
 EOSQL
 
-# Connect to the systems database and grant privileges on the public schema
+# Connect to the games database and grant privileges on the public schema
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "games" <<-EOSQL
+    GRANT ALL PRIVILEGES ON SCHEMA public TO games;
+EOSQL
+
+# Connect to the notifications database and grant privileges on the public schema
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "notifications" <<-EOSQL
     GRANT ALL PRIVILEGES ON SCHEMA public TO games;
 EOSQL
