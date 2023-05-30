@@ -42,6 +42,7 @@ tasks.register('addSystemsConnector') {
                 "systems",
                 "system_entity",
                 "systems_sql_",
+                "SystemEntity"
             )
         )
 
@@ -61,6 +62,7 @@ tasks.register('addGamesConnector') {
                 "games",
                 "game_entity",
                 "games_sql_",
+                "GameEntity"
             )
         )
 
@@ -103,7 +105,14 @@ tasks.register('addSystemsSink') {
     }
 }
 
-private static LinkedHashMap<String, Serializable> sourceRequestBody(String name, String user, String password, String table, String topicPrefix) {
+private static LinkedHashMap<String, Serializable> sourceRequestBody(
+        String name,
+        String user,
+        String password,
+        String table,
+        String topicPrefix,
+        String javaClassName
+) {
     return [
             name  : name,
             config: [
@@ -127,9 +136,18 @@ private static LinkedHashMap<String, Serializable> sourceRequestBody(String name
                     "topic.prefix"               : topicPrefix,
 
                     // Setup the Key for the topics
-                    "transforms"                 : "createKey",
+                    "transforms"                 : "createKey,extractKey,addNamespace",
                     "transforms.createKey.type"  : "org.apache.kafka.connect.transforms.ValueToKey",
                     "transforms.createKey.fields": "id",
+
+                    // Extract the key value
+                    "transforms.extractKey.type"  :"org.apache.kafka.connect.transforms.ExtractField\$Key",
+                    "transforms.extractKey.field" :"id",
+
+                    // add a name space. see https://issues.apache.org/jira/browse/KAFKA-7883
+                    // Note that this is a
+                    "transforms.addNamespace.type" : "org.apache.kafka.connect.transforms.SetSchemaMetadata\$Value",
+                    "transforms.addNamespace.schema.name" : "com.icoffiel.avro.db.$javaClassName"
             ]
     ]
 }

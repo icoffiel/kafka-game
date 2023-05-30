@@ -6,7 +6,7 @@ POST localhost:18081/games/
 Content-Type: application/json
 
 {
-  "name": "Crash Bandicoot",
+  "name": "Crash Bandicoot 3",
   "description": "Lorem Ipsum about Crash",
   "numberOfPlayers": 1,
   "price": 10.99,
