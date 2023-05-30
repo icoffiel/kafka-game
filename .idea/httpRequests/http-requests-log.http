@@ -10,6 +10,458 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "description": "Lorem Ipsum about Crash",
   "numberOfPlayers": 1,
   "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T135420.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test2@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T135409.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 2",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T135345.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test2@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T135332.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test1@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T135314.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 165
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T135235.200.json
+
+###
+
+POST http://localhost:18080/systems/
+Content-Type: application/json
+Content-Length: 51
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Xbox",
+  "releaseDate": "2012-01-20"
+}
+
+<> 2023-05-30T135232.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 165
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T135226.400.txt
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 2",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T134125.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test1@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T133812.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 165
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T133507.200.json
+
+###
+
+POST http://localhost:18080/systems/
+Content-Type: application/json
+Content-Length: 51
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Xbox",
+  "releaseDate": "2012-01-20"
+}
+
+<> 2023-05-30T133459.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test6@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T130606.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 5",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T125926.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 4",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T114543.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 3",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T114346.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test2@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T114259.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 44
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T114231.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 2",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T114024.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 44
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T114003.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 165
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T113903.200.json
+
+###
+
+POST http://localhost:18082/notifications/
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "test3@example.com",
+  "id": 1
+}
+
+<> 2023-05-30T112727.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 3",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 1,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T111358.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 3",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
+  "systemId": 2,
+  "releaseDate": "2017-01-01"
+}
+
+<> 2023-05-30T111351.400.txt
+
+###
+
+POST http://localhost:18080/systems/
+Content-Type: application/json
+Content-Length: 51
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Xbox",
+  "releaseDate": "2012-01-20"
+}
+
+<> 2023-05-30T111343.200.json
+
+###
+
+POST http://localhost:18081/games/
+Content-Type: application/json
+Content-Length: 167
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Crash Bandicoot 3",
+  "description": "Lorem Ipsum about Crash",
+  "numberOfPlayers": 1,
+  "price": 10.99,
   "systemId": 2,
   "releaseDate": "2017-01-01"
 }
@@ -431,444 +883,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-05-25T153641.200.json
-
-###
-
-POST http://localhost:18081/games/
-Content-Type: application/json
-Content-Length: 165
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Crash Bandicoot",
-  "description": "Lorem Ipsum about Crash",
-  "numberOfPlayers": 1,
-  "price": 10.99,
-  "systemId": 1,
-  "releaseDate": "2017-01-01"
-}
-
-<> 2023-05-25T153332.200.json
-
-###
-
-POST http://localhost:18080/systems/
-Content-Type: application/json
-Content-Length: 51
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Xbox",
-  "releaseDate": "2012-01-20"
-}
-
-<> 2023-05-25T153303.200.json
-
-###
-
-POST http://localhost:18081/games/
-Content-Type: application/json
-Content-Length: 167
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Crash Bandicoot 3",
-  "description": "Lorem Ipsum about Crash",
-  "numberOfPlayers": 1,
-  "price": 10.99,
-  "systemId": 1,
-  "releaseDate": "2017-01-01"
-}
-
-<> 2023-05-25T150240.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 45
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-25T150153.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 48
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "another@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-25T145851.200.json
-
-###
-
-POST http://localhost:18081/games/
-Content-Type: application/json
-Content-Length: 167
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Crash Bandicoot 2",
-  "description": "Lorem Ipsum about Crash",
-  "numberOfPlayers": 1,
-  "price": 10.99,
-  "systemId": 1,
-  "releaseDate": "2017-01-01"
-}
-
-<> 2023-05-25T134310.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 48
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "another@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-25T134202.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 48
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "another@example.com",
-  "id": 2
-
-}
-
-<> 2023-05-25T134002.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 48
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "another@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-25T133049.200.json
-
-###
-
-POST http://localhost:18081/games/
-Content-Type: application/json
-Content-Length: 165
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Crash Bandicoot",
-  "description": "Lorem Ipsum about Crash",
-  "numberOfPlayers": 1,
-  "price": 10.99,
-  "systemId": 1,
-  "releaseDate": "2017-01-01"
-}
-
-<> 2023-05-25T130935.200.json
-
-###
-
-POST http://localhost:18081/games/
-Content-Type: application/json
-Content-Length: 165
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Crash Bandicoot",
-  "description": "Lorem Ipsum about Crash",
-  "numberOfPlayers": 1,
-  "price": 10.99,
-  "systemId": 1,
-  "releaseDate": "2017-01-01"
-}
-
-<> 2023-05-25T130854.400.txt
-
-###
-
-POST http://localhost:18080/systems/
-Content-Type: application/json
-Content-Length: 51
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Xbox",
-  "releaseDate": "2012-01-20"
-}
-
-<> 2023-05-25T130736.200.json
-
-###
-
-POST http://localhost:18081/games/
-Content-Type: application/json
-Content-Length: 165
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Crash Bandicoot",
-  "description": "Lorem Ipsum about Crash",
-  "numberOfPlayers": 1,
-  "price": 10.99,
-  "systemId": 1,
-  "releaseDate": "2017-01-01"
-}
-
-<> 2023-05-25T125312.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 49
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "another@example.com",
-  "id": 54
-
-}
-
-<> 2023-05-25T115224.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 49
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "another@example.com",
-  "id": 54
-
-}
-
-<> 2023-05-25T105308.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 46
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 54
-
-}
-
-<> 2023-05-25T105231.200.json
-
-###
-
-POST http://localhost:18080/systems/
-Content-Type: application/json
-Content-Length: 58
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Playstation",
-  "releaseDate": "2012-01-20"
-}
-
-<> 2023-05-25T105201.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 46
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 54
-
-}
-
-<> 2023-05-25T102311.200.json
-
-###
-
-POST http://localhost:18080/systems/
-Content-Type: application/json
-Content-Length: 58
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Playstation",
-  "releaseDate": "2012-01-20"
-}
-
-<> 2023-05-25T102233.200.json
-
-###
-
-POST http://localhost:18080/systems/
-Content-Type: application/json
-Content-Length: 58
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Playstation",
-  "releaseDate": "2012-01-20"
-}
-
-<> 2023-05-25T102141.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 45
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 5
-
-}
-
-<> 2023-05-25T100217.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 45
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-24T164514.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 45
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-24T161850.200.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 45
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-24T155247.500.json
-
-###
-
-POST http://localhost:18082/notifications/
-Content-Type: application/json
-Content-Length: 45
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "test@example.com",
-  "id": 1
-
-}
-
-<> 2023-05-24T152631.200.txt
 
 ###
 

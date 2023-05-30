@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+
 @RestController
 @RequestMapping("/notifications")
 public class NotificationsController {
@@ -16,7 +19,7 @@ public class NotificationsController {
     }
 
     @PostMapping("/")
-    public NotificationResponse sendNotification(@RequestBody AddNotificationRequest request) {
+    public CompletableFuture<UUID> sendNotification(@RequestBody AddNotificationRequest request) {
         return notificationService.createNotification(request);
     }
 }

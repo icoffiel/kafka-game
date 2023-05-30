@@ -41,13 +41,6 @@ cd games
 ./gradlew bootRun
 ```
 
-```shell
-# run from notifications folder
-cd notifications
-
-./gradlew bootRun
-```
-
 Add the connectors:
 ```shell
 # run from the root folder
@@ -57,6 +50,12 @@ Add the connectors:
 > Note: Kafka Connect can take a minute or two to start so if this fails try waiting a minute before running.
 > This also only needs to be run once. If ran multiple times it will produce a 409 status code
 
+```shell
+# run from notifications folder
+cd notifications
+
+./gradlew bootRun
+```
 
 Once everything has started then you will be able to add systems, games and notifications.
 
@@ -70,15 +69,18 @@ in the notifications logs that has the system id as the key and the email addres
 - Topic naming
   - Using dot notation (`systems.sql.<table>` for instance) doesn't play nice when being ingested as a sink to a DB due to the naming
   - Would also be nice to instead of only having a prefix, to also have a postfix (`systems.<table>.sql` would then be possible for instance)
-- Database lookup in stream application
-  - This can cause latency and also couples us to the database (what if the database goes down?)
-  - Enrich the new games topic with the email address and have another topic that ensures duplicates aren't sent?
-  (Joining streams causes emissions from both streams to send a new message, while we only want new games to trigger new messages)
+- Startup order
+  - Currently the system and game apps create the DB on startup. The DB is required the JDBC source connectors. Ideally all apps should be able to startup in whatever order they choose.
+  - Each app should be responsible for starting the things it needs in the following order:
+    - SQL
+    - Connectors/Application
+  - The above order would ensure that the DB is there before any connectors, and that the DB is there for the app to use
+  - There is some natural dependency though (games relies on the systems stream being there to begin with)
 
 ## To Do
 
 - Updates
-- Stream processing apps (dashboard for games and consoles, notification system)
 - Tests
 - Hook everything into the root gradle file for easier startups (single command to start everything)
 - Ephemeral ports for apps and use a gateway for apps?
+- Increase partition sizes to ensure that the topology handles more than 1 partition

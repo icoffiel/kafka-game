@@ -3,6 +3,6 @@ POST localhost:18082/notifications/
 Content-Type: application/json
 
 {
-  "email": "test3@example.com",
-  "id": 2
+  "email": "test2@example.com",
+  "id": 1
 }

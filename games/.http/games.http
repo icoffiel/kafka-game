@@ -10,7 +10,7 @@ Content-Type: application/json
   "description": "Lorem Ipsum about Crash",
   "numberOfPlayers": 1,
   "price": 10.99,
-  "systemId": 2,
+  "systemId": 1,
   "releaseDate": "2017-01-01"
 }
 
