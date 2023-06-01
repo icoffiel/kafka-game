@@ -9,6 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/games" />
+            <option value="$PROJECT_DIR$/systems" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -17,7 +20,10 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/games" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/games" />
+            <option value="$PROJECT_DIR$/systems" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -35,6 +41,9 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/systems" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/games" />
             <option value="$PROJECT_DIR$/systems" />
           </set>
         </option>
