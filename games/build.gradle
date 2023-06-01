@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.6'
     id 'io.spring.dependency-management' version '1.1.0'
+
+    id 'kafkagame.kafka-connect'
 }
 
 group = 'com.icoffiel'
@@ -25,4 +27,40 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// Required otherwise we get an error saying that this task isn't found
+tasks.register("prepareKotlinBuildScriptModel"){}
+
+addJDBCSourceConnector {
+    configuration {
+        connectorName = "GamesSourceConnector"
+        username = "games"
+        password = "games"
+        tableName = "game_entity"
+        topicPrefix = "games_sql_"
+
+        transforms = "createKey,extractKey,addNamespace"
+
+        transformsDefinitions["transforms.createKey.type"] = "org.apache.kafka.connect.transforms.ValueToKey"
+        transformsDefinitions["transforms.createKey.fields"] = "id"
+
+        transformsDefinitions["transforms.extractKey.type"] = "org.apache.kafka.connect.transforms.ExtractField\$Key"
+        transformsDefinitions["transforms.extractKey.field"] = "id"
+
+        transformsDefinitions["transforms.addNamespace.type"] = "org.apache.kafka.connect.transforms.SetSchemaMetadata\$Value"
+        transformsDefinitions["transforms.addNamespace.schema.name"] = "com.icoffiel.avro.db.GameEntity"
+    }
+}
+
+addJDBCSinkConnector {
+    configuration {
+        connectorName = "SystemsToGameSink"
+        topics = "systems_sql_system_entity"
+        username = "games"
+        password = "games"
+        connectionUrl = "jdbc:postgresql://postgres:5432/games"
+        fieldsWhitelist = "id,name"
+        tableNameFormat = "kafka_\${topic}"
+    }
 }

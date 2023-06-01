@@ -49,6 +49,10 @@ Add the connectors:
 
 > Note: Kafka Connect can take a minute or two to start so if this fails try waiting a minute before running.
 > This also only needs to be run once. If ran multiple times it will produce a 409 status code
+ 
+> Note: You will need to add at least 1 system and 1 game before launching notifications to ensure that the 
+> necessary topics are created. See the issues below for more information.
+
 
 ```shell
 # run from notifications folder
@@ -69,8 +73,11 @@ in the notifications logs that has the system id as the key and the email addres
 - Topic naming
   - Using dot notation (`systems.sql.<table>` for instance) doesn't play nice when being ingested as a sink to a DB due to the naming
   - Would also be nice to instead of only having a prefix, to also have a postfix (`systems.<table>.sql` would then be possible for instance)
+- Topic creation
+  - The JDBC source connectors currently create the topic only when it detects that he DB has been updated for the first time
+  - This should be moved to either prior to the pp starting or when the app starts up
 - Startup order
-  - Currently the system and game apps create the DB on startup. The DB is required the JDBC source connectors. Ideally all apps should be able to startup in whatever order they choose.
+  - Currently, the system and game apps create the DB on startup. The DB is required the JDBC source connectors. Ideally all apps should be able to startup in whatever order they choose.
   - Each app should be responsible for starting the things it needs in the following order:
     - SQL
     - Connectors/Application
