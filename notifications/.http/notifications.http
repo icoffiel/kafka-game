@@ -1,8 +1,8 @@
 ### Setup a new notification
-POST localhost:18082/notifications/
+POST localhost:18083/notifications/
 Content-Type: application/json
 
 {
-  "email": "test2@example.com",
-  "id": 1
+  "email": "test6@example.com",
+  "id": 6
 }

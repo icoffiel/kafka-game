@@ -26,5 +26,4 @@ spring:
         default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
         default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       replication-factor: 1 # Default is -1 but using this stack you get an error that it doesn't support -1
-server:
-  port: 18082
+      state-dir: ${java.io.tmpdir}kafka-streams${file.separator}${server.port} # A;;pw running multiple instances
