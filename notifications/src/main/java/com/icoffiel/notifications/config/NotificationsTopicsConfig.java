@@ -10,12 +10,11 @@ public class NotificationsTopicsConfig {
 
     public static final String TOPIC_NAME = "notifications";
 
-    // TODO - This isn't being created for some reason
     @Bean
     public NewTopic notificationTopic() {
         return TopicBuilder
                 .name(TOPIC_NAME)
-                .partitions(1)
+                .partitions(3)
                 .replicas(1)
                 .build();
     }

@@ -6,7 +6,7 @@ POST localhost:18080/systems/
 Content-Type: application/json
 
 {
-  "name": "Xbox",
+  "name": "Switch",
   "releaseDate": "2012-01-20"
 }
 

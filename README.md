@@ -88,6 +88,3 @@ in the notifications logs that has the system id as the key and the email addres
 
 - Updates
 - Tests
-- Hook everything into the root gradle file for easier startups (single command to start everything)
-- Ephemeral ports for apps and use a gateway for apps?
-- Increase partition sizes to ensure that the topology handles more than 1 partition
