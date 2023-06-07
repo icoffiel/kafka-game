@@ -88,9 +88,6 @@ in the notifications logs that has the system id as the key and the email addres
     - Connectors/Application
   - The above order would ensure that the DB is there before any connectors, and that the DB is there for the app to use
   - There is some natural dependency though (games relies on the systems stream being there to begin with)
-- Games JDBC Connector Topic
-  - The topic created by the connector for some reason doesn't appear until after something has been written to the DB
-  - Ideally this would be created when the connector is so that apps don't have to wait for a message
 
 ## To Do
 
