@@ -11,6 +11,11 @@ The application uses The following microservices to add the expected entites to 
 - [Games](./games): REST Interface providing CRUD operations. DB is monitored by Kafka Connect.
 - [Notifications](./notifications): REST Interface providing CRUD operations. Kafka Stream monitors for new games and provides a new message with any email addresses that have opted to be notified.
 
+Tests are available in the systems application, as well as the notifications application.
+
+- Systems implements the usual web slices tests along with Test Containers for the repository layer.
+- Notifications implements testing the Kafka Streams implementation.
+
 ## Prerequisites
 
 - [Docker Compose](https://docs.docker.com/compose/)
@@ -83,6 +88,9 @@ in the notifications logs that has the system id as the key and the email addres
     - Connectors/Application
   - The above order would ensure that the DB is there before any connectors, and that the DB is there for the app to use
   - There is some natural dependency though (games relies on the systems stream being there to begin with)
+- Games JDBC Connector Topic
+  - The topic created by the connector for some reason doesn't appear until after something has been written to the DB
+  - Ideally this would be created when the connector is so that apps don't have to wait for a message
 
 ## To Do
 
