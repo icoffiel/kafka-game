@@ -37,6 +37,7 @@ public class SystemService {
     }
 
     public SystemResponse save(AddSystemRequest addSystemRequest) {
+        // TODO - Adapter
         SystemEntity systemEntity = new SystemEntity();
         systemEntity.setName(addSystemRequest.name());
         systemEntity.setReleaseDate(addSystemRequest.releaseDate());

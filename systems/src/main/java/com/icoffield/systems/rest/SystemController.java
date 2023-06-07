@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
@@ -31,8 +33,11 @@ public class SystemController {
     }
 
     @PostMapping("/")
-    public SystemResponse save(@Valid @RequestBody AddSystemRequest addSystemRequest) {
-        return systemService.save(addSystemRequest);
+    public ResponseEntity<SystemResponse> save(@Valid @RequestBody AddSystemRequest addSystemRequest) throws URISyntaxException {
+        SystemResponse saved = systemService.save(addSystemRequest);
+        return ResponseEntity
+                .created(new URI("/systems/" + saved.id()))
+                .body(saved);
     }
 
     @DeleteMapping("/{id}")
