@@ -4,12 +4,16 @@ Kafka Games is an application that allows Gaming Systems and Games to be added t
 
 ## Overview
 
+### Architecture
+
 ![Architecture](.docs/images/architecture.svg)
 
 The application uses The following microservices to add the expected entites to the system:
 - [Systems](./systems): REST Interface providing CRUD operations. DB is monitored by Kafka Connect.
 - [Games](./games): REST Interface providing CRUD operations. DB is monitored by Kafka Connect.
 - [Notifications](./notifications): REST Interface providing CRUD operations. Kafka Stream monitors for new games and provides a new message with any email addresses that have opted to be notified.
+
+### Tests
 
 Tests are available in the systems application, as well as the notifications application.
 
@@ -92,4 +96,3 @@ in the notifications logs that has the system id as the key and the email addres
 ## To Do
 
 - Updates
-- Tests
